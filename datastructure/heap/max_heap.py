@@ -41,9 +41,7 @@ class MaxHeap:
                     self.heap[index], self.heap[right] = self.heap[right], self.heap[index]
                     print(self.heap)
                     self.max_heapify(right)
-            
-        
-        
+                    
     
     def insert(self, element):
         if self.size > self.maxsize:
