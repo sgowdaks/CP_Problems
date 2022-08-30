@@ -9,7 +9,7 @@ for i in range(0, len(mat)):
         mat[i][j], mat[j][i] = mat[j][i], mat[i][j]
         
         
-#anti clock-wise
+#clock-wise
 
 for i in range(0, len(mat)):
     left = 0
@@ -19,7 +19,7 @@ for i in range(0, len(mat)):
         left = left + 1
         right = right - 1
         
-#clock-wise
+#anti clock-wise
 
 for i in range(0, len(mat)):
     top = 0
