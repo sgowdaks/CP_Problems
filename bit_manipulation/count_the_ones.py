@@ -1,6 +1,21 @@
 class Solution:
 	def setBits(self, N):
 		# code here
+		#method1
+		def recurse(N):
+		    if N == 0:
+		        return 0
+		    if N % 2 == 0:
+		        N = N // 2
+		        return recurse(N)
+		    else:
+		        N = N // 2
+		        return 1 + recurse(N)
+		    
+		    
+		return recurse(N)
+		
+		#method2
 		binary = bin(N)
 		count = 0
 		for i in binary[2:]:
