@@ -17,6 +17,7 @@ class Solution:
                             return root.right
 
                     else:
+                        #By using inorder predecessor
                         temp = root.left
                         while temp.right !=None:
                             temp=temp.right
