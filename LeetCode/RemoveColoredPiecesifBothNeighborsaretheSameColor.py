@@ -8,26 +8,18 @@ class Solution:
         j = 1
         
         alice = 0
+        bob = 0
+        
         while i + 1 < len(colors):
             if colors[i] == "A" and colors[i-1] == "A" and colors[i+1] == "A":
-                del colors[i]
                 alice += 1 
-            else:
-                i = i + 1
-                
-            
-                
-        bob = 0
-        while j + 1  < len(colors):
-            if colors[j] == "B" and colors[j-1] == "B" and colors[j+1] == "B":
-                del colors[j]
+            elif colors[i] == "B" and colors[i-1] == "B" and colors[i+1] == "B":
                 bob += 1
-            else:
-                j = j + 1
-                
-            if bob > alice:
-                return False
-                
+            i = i + 1           
+
+        if bob > alice:
+            return False
+            
                 
         if alice == bob:
             return False
