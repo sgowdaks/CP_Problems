@@ -1,4 +1,5 @@
 class Solution:
+    #https://leetcode.com/problems/sum-of-subarray-minimums/discuss/2118729/Very-detailed-stack-explanation-O(n)-or-Images-and-comments
     def sumSubarrayMins(self, arr: List[int]) -> int:
         mod=1000000007;
         #next smallest element towards left
