@@ -1,9 +1,40 @@
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
+#***optimized solution**
+class Solution:
+    def isCousins(self, root: Optional[TreeNode], x: int, y: int) -> bool:
+        def find(root, x, y, height, parent, dicti):
+            if root == None:
+                return 0, parent
+            if root.val == x:
+                dicti[x] = (parent, height)
+                return 
+            elif root.val == y:
+                dicti[y] = (parent, height)
+                return 
+                
+            
+            parent = root
+            height += 1
+            find(root.left,x, y, height, parent, dicti)
+            find(root.right, x, y, height, parent, dicti)
+        
+        height = 0
+        parent = root
+        dicti = {}
+        find(root, x, y, height, parent, dicti)
+        if len(dicti) == 1:
+            return False
+        else:
+            root1, height1 = dicti[x]
+            root2, height2 = dicti[y]
+            if height1 == height2:
+                if root1 == root2:
+                    return False
+                return True
+            return False
+        
+        
+#*****************************--------------------****************************
+
 class Solution:
     def isCousins(self, root: Optional[TreeNode], x: int, y: int) -> bool:
         def find(root, cousin, height, parent):
