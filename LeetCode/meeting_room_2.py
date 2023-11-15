@@ -1,3 +1,4 @@
+import heapq
 #https://leetcode.com/problems/meeting-rooms-ii/discuss/1529030/Easy-Python-3-w-Explanation%3A-Min-Heap-O(nlogn)
 class Solution:    
     def minMeetingRooms(self, intervals: List[List[int]]) -> int:
